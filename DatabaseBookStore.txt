@@ -1,0 +1,66 @@
+1-  Customer Table
+
+- CustomerID: Integer PRIMARY KEY
+- CustomerName: String
+- CustomerEmail: String UNIQUE
+- CustomerPassword: String
+- CustomerPhone: String
+- CustomerAddress: String
+- CustomerCity: String
+- CustomerZip: String
+- CustomerCountry: String
+
+2-  Category Information
+
+- CategoryID: Integer PRIMARY KEY 
+- CategoryName: String UNIQUE
+
+3-  Book Table joined by Category Table MANY TO ONE RELATIONSHIP
+
+- Category: String
+- BookID: Integer PRIMARY KEY
+- BookTitle: String
+- BookAuthor: String
+- BookDesc: String
+- BookISBN: String
+- BookThumbImg: Image
+- BookPrice: Float
+- BookPublishDate: Date
+- BookQuantity: Integer
+
+4- Image
+
+- ImageID: Integer PRIMARY KEY
+- IMageURL: VARCHAR
+5- Review Table Joined By Customer Table MANY TO ONE RELATIONSHIP & JOINED BY Book Table using MANY TO ONE
+
+- ReviewID:Integer PRIMARY KEY
+- CustomerID: Integer
+- BookID: Integer
+- Rating: Integer
+- Headline: String
+- Comment: String
+- ReviewDate: Date
+
+6- Order Table
+
+- OrderID: Integer PRIMARY KEY
+- CustomerID: 	cUSTOMER
+- SubTotal: Float
+- Total: Float
+- OrderStatus: String
+- PaymentMethod: String
+- OrderDate: Date
+
+7- Admin Table
+
+- AdminID: Integer PRIMARY KEY
+- AdminEmail: String
+- AdminName: String
+- AdminPassword: String
+
+
+8- BookOrderDetails Table
+- BookId: Book
+- OrderId: Order
+- CustomerId: Customer
